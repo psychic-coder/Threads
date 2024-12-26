@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import {Stack} from "@mui/material"
+import Input from "../../Components/home/input";
+import Post from "../../Components/home/Post";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <>
+      <Input/>
+      <Stack flexDirection={"column"} gap={2} mb={10}>
+       <Post/>
+      </Stack>
+    </>
+  );
+};
 
-export default Home
+export default Home;
