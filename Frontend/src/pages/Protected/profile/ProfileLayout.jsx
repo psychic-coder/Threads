@@ -11,38 +11,37 @@ const ProfileLayout = () => {
         gap={2}
         p={2}
         m={2}
-        width={"800px"}
+        width={ "800px"}
         mx={"auto"}
       >
         <Stack
           flexDirection={"row"}
-          justifyContent={"space-betweem"}
+          justifyContent={"space-between"}
           alignItems={"center"}
         >
           <Stack flexDirection={"column"} gap={1}>
-            <Typography variant="h2" fontWeight={"bold"} fontSize={"2rem"}>
-              Lorem ipsum.
+            <Typography
+              variant="h2"
+              fontWeight={"bold"}
+              fontSize={ "1rem"}
+            >
+              Lorem, ipsum.
             </Typography>
             <Stack flexDirection={"row"} alignItems={"center"} gap={1}>
-              <Typography variant="h2" fontSize={"1rem"}>
-                Lorem ipsum.
+              <Typography variant="h2" fontSize={"1rem" }>
+                Lorem, ipsum.
               </Typography>
               <Chip
                 label="threads.net"
                 size="small"
-                sx={{
-                  fontSize: "0.8rem",
-                }}
+                sx={{ fontSize:  "0.6rem" }}
               />
             </Stack>
           </Stack>
           <Avatar
-            src=""
-            alt=""
-            sx={{
-              width: "60",
-              height: "60",
-            }}
+            src={ ""}
+            alt={""}
+            sx={{ width:60, height:60  }}
           />
         </Stack>
         <Typography variant="subtitle2">Lorem ipsum dolor sit.</Typography>
