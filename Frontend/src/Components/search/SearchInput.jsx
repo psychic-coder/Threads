@@ -14,7 +14,7 @@ const SearchInput = () => {
           px: 2,
           py: 1,
           my: 5,
-          mx: "auto",
+          mx: "29rem",
           "& .MuiOutlinedInput-root": {
             color: "black",
             "& fieldset": {
