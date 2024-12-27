@@ -1,7 +1,7 @@
 import { Avatar, Button, Chip, Stack, Typography } from "@mui/material";
+import {Link} from "react-router-dom"
 import React from "react";
 import { FaInstagram } from "react-icons/fa";
-
 
 const ProfileLayout = () => {
   return (
@@ -24,10 +24,7 @@ const ProfileLayout = () => {
               Lorem ipsum.
             </Typography>
             <Stack flexDirection={"row"} alignItems={"center"} gap={1}>
-              <Typography
-                variant="h2"
-                fontSize={"1rem"}
-              >
+              <Typography variant="h2" fontSize={"1rem"}>
                 Lorem ipsum.
               </Typography>
               <Chip
@@ -76,6 +73,20 @@ const ProfileLayout = () => {
       >
         Edit Profile
       </Button>
+      <Stack
+        flexDirection={"row"}
+        justifyContent={"space-evenly"}
+        my={5}
+        pb={2}
+        borderBottom={"2px solid gray"}
+        fontSize={"1.2rem"}
+        width={"800px"}
+        mx={"auto"}
+      >
+        <Link to={"/profile/threads/1"} className="Link">Threads</Link>
+        <Link to={"/profile/replies/1"} className="Link">Replies</Link>
+        <Link to={"/profile/repost/1"} className="Link">Reposts</Link>
+      </Stack>
     </>
   );
 };
