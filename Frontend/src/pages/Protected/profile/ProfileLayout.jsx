@@ -1,5 +1,5 @@
 import { Avatar, Button, Chip, Stack, Typography } from "@mui/material";
-import {Link} from "react-router-dom"
+import {Link, Outlet} from "react-router-dom"
 import React from "react";
 import { FaInstagram } from "react-icons/fa";
 
@@ -84,8 +84,9 @@ const ProfileLayout = () => {
       >
         <Link to={"/profile/threads/1"} className="Link">Threads</Link>
         <Link to={"/profile/replies/1"} className="Link">Replies</Link>
-        <Link to={"/profile/repost/1"} className="Link">Reposts</Link>
+        <Link to={"/profile/reposts/1"} className="Link">Reposts</Link>
       </Stack>
+      <Outlet/>
     </>
   );
 };

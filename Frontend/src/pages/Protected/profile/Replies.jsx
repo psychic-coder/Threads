@@ -1,8 +1,14 @@
 import React from 'react'
+import {Stack} from "@mui/material"
 
 const Replies = () => {
   return (
-    <div>Replies</div>
+    <>
+     <Stack flexDirection={'column'} gap={2} width={'800px'} mx={'auto'}>
+           {/* comment */}
+           
+     </Stack>
+    </>
   )
 }
 
