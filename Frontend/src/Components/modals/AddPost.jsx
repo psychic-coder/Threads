@@ -41,7 +41,7 @@ const AddPost = () => {
         fullScreen={_700 ? false : true}
       >
         <Box position={"absolute"} top={20} right={20} onClick={handleClose}>
-          <RxCross2 size={28} className="imahe-icon" />
+          <RxCross2 size={28} className="image-icon" />
         </Box>
         <DialogTitle textAlign={"center"} mb={5}>
           New Thread...
