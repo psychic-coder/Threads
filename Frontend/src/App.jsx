@@ -11,6 +11,7 @@ import ProfileLayout from "./pages/Protected/profile/ProfileLayout";
 import Threads from "./pages/Protected/profile/Threads";
 import Replies from "./pages/Protected/profile/Replies";
 import Repost from "./pages/Protected/profile/Repost";
+import SinglePost from "./pages/Protected/SinglePost";
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
         <Routes>
             <Route exact path="/" element={<ProtectedLayout/>}>
                 <Route exact path="" element={<Home/>} />
-                <Route exact path="post/:id" element={<h1>singlepost</h1>} />
+                <Route exact path="post/:id" element={<SinglePost/>} />
                 <Route exact path="search" element={<Search/>} />
                 <Route exact path="profile" element={<ProfileLayout/>}>
                     <Route exact path="threads/:id" element={<Threads/>}/>
