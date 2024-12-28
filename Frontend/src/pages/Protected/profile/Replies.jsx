@@ -1,16 +1,21 @@
-import React from 'react'
-import {Stack} from "@mui/material"
-import Comments from '../../../Components/home/post/Comments'
+import React from "react";
+import { Stack, useMediaQuery } from "@mui/material";
+import Comments from "../../../Components/home/post/Comments";
 
 const Replies = () => {
+  const _700 = useMediaQuery("(min-width:700px)");
   return (
     <>
-     <Stack flexDirection={'column'} gap={2} width={'800px'} mx={'auto'}>
-           
-      <Comments/>
-     </Stack>
+      <Stack
+        flexDirection={"column"}
+        gap={2}
+        width={_700 ? "800px" : "90%"}
+        mx={"auto"}
+      >
+        <Comments />
+      </Stack>
     </>
-  )
-}
+  );
+};
 
-export default Replies
+export default Replies;
