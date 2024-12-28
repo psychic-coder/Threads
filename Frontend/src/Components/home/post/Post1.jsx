@@ -1,7 +1,15 @@
-import { Avatar, AvatarGroup, Badge, Stack, Stepper } from "@mui/material";
+import {
+  Avatar,
+  AvatarGroup,
+  Badge,
+  Stack,
+  Stepper,
+  useMediaQuery,
+} from "@mui/material";
 import React from "react";
 
 const Post1 = () => {
+  const _700 = useMediaQuery("(min-width:700px)");
   return (
     <Stack
       flexDirection={"column"}
@@ -16,19 +24,23 @@ const Post1 = () => {
             alt="+"
             src=""
             sx={{
-              width: 20,
-              height: 20,
+              width: _700 ? 20 : 14,
+              height: _700 ? 20 : 14,
               bgcolor: "green",
               position: "relative",
-              right: 4,
-              bottom: 4,
+              right: _700 ? 4 : 0,
+              bottom: _700 ? 4 : 0,
             }}
           >
             +
           </Avatar>
         }
       >
-        <Avatar alt="AJ" src={{ width: 40, height: 40 }} />
+        <Avatar
+          alt="AJ"
+          src=""
+          sx={{ width: _700 ? 40 : 32, height: _700 ? 40 : 32 }}
+        />
       </Badge>
       <Stack
         flexDirection={"column"}
@@ -46,13 +58,13 @@ const Post1 = () => {
           }}
         ></Stepper>
         <AvatarGroup
-           total={4}
-        //   max={3}
+          total={4}
+          //   max={3}
           sx={{
             "& .MuiAvatar-root": {
-              width: 24,
-              height: 24,
-              fontSize: 12,
+              width: _700?24:16,
+              height: _700?24:16,
+              fontSize:_700?12:8,
             },
           }}
         >

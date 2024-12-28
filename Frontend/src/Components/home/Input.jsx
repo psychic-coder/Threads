@@ -1,10 +1,17 @@
-import { Avatar, Button, Stack, Typography } from "@mui/material";
+import {
+  Avatar,
+  Button,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import React from "react";
 
 const Input = () => {
+  const _700 = useMediaQuery("(min-width:700px)");
   return (
     <>
-       
+      {_700 ? (
         <Stack
           flexDirection={"row"}
           alignItems={"center"}
@@ -15,13 +22,9 @@ const Input = () => {
           borderBottom={"2px solid gray"}
           my={5}
           mx={"auto"}
-         
         >
           <Stack flexDirection={"row"} alignItems={"center"} gap={2}>
-            <Avatar
-              src=""
-              alt=""
-            />
+            <Avatar src="" alt="" />
             <Typography color={"GrayText"}> Start a thread...</Typography>
           </Stack>
           <Button
@@ -38,6 +41,7 @@ const Input = () => {
             POST
           </Button>
         </Stack>
+      ) : null}
     </>
   );
 };

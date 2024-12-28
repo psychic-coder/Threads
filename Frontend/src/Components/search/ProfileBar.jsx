@@ -1,7 +1,8 @@
-import { Avatar, Button, Stack, Typography } from "@mui/material";
+import { Avatar, Button, Stack, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 
 const ProfileBar = () => {
+  const _700 = useMediaQuery("(min-width:700px)");
   return (
     <>
       <Stack
