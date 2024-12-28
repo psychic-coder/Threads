@@ -16,20 +16,21 @@ import SinglePost from "./pages/Protected/SinglePost";
 const App = () => {
   return (
     <>
-      <Box minHeight={"100vh"} >
-        <BrowserRouter >
-        <Routes>
-            <Route exact path="/" element={<ProtectedLayout/>}>
-                <Route exact path="" element={<Home/>} />
-                <Route exact path="post/:id" element={<SinglePost/>} />
-                <Route exact path="search" element={<Search/>} />
-                <Route exact path="profile" element={<ProfileLayout/>}>
-                    <Route exact path="threads/:id" element={<Threads/>}/>
-                    <Route exact path="replies/:id" element={<Replies/>}/>
-                    <Route exact path="reposts/:id" element={<Repost/>}/>
-                </Route>
+      <Box minHeight={"100vh"}>
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<ProtectedLayout />}>
+              <Route exact path="" element={<Home />} />
+              <Route exact path="post/:id" element={<SinglePost />} />
+              <Route exact path="search" element={<Search />} />
+              <Route exact path="profile" element={<ProfileLayout />}>
+                <Route exact path="threads/:id" element={<Threads />} />
+                <Route exact path="replies/:id" element={<Replies />} />
+                <Route exact path="reposts/:id" element={<Repost />} />
+              </Route>
             </Route>
-        </Routes>
+            <Route exact path="/register" element={<Register/>} />
+          </Routes>
         </BrowserRouter>
       </Box>
     </>

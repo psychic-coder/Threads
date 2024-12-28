@@ -1,5 +1,5 @@
 import React from "react";
-import {Stack} from "@mui/material"
+import {Button, Stack} from "@mui/material"
 import Input from "../../Components/home/input";
 import Post from "../../Components/home/Post";
 
@@ -14,6 +14,14 @@ const Home = () => {
        <Post/>
        <Post/>
       </Stack>
+      <Button size="large" sx={{
+        my:5,
+        p:3,
+        textDecoration:"underline",
+        cursor:"pointer"
+      }}>
+        Load More
+      </Button>
     </>
   );
 };

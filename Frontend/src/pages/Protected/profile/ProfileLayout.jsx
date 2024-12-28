@@ -1,9 +1,15 @@
-import { Avatar, Button, Chip, Stack, Typography } from "@mui/material";
+import { Avatar, Button, Chip, Stack, Typography, useMediaQuery } from "@mui/material";
 import {Link, Outlet} from "react-router-dom"
 import React from "react";
 import { FaInstagram } from "react-icons/fa";
 
 const ProfileLayout = () => {
+
+    const _700=useMediaQuery("(min-width:700px)");
+    const _500=useMediaQuery("(min-width:500px)");
+    const _300=useMediaQuery("(min-width:300px)");
+
+
   return (
     <>
       <Stack

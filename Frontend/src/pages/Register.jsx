@@ -1,7 +1,39 @@
-import { Button, Stack, TextField, Typography } from "@mui/material";
+import { Button, Stack, TextField, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
+import { useState } from "react";
 
 const Register = () => {
+  const [login, setLogin] = useState(false);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // used for page responsiveness
+  const _700=useMediaQuery("(min-width:700px)");
+
+  const toggleLogin = () => {
+    setLogin(!login);
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const data = {
+      email,
+      password,
+    };
+
+    console.log(data);
+  };
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const data = {
+      username,
+      email,
+      password,
+    };
+    console.log(data);
+  };
+
   return (
     <Stack
       width={"100%"}
@@ -9,33 +41,38 @@ const Register = () => {
       flexDirection={"row"}
       justifyContent={"center"}
       alignItems={"center"}
-      sx={{
+      sx={_700 ? {
         backgroundImage: 'url("/register-bg.webp")',
         backgroundRepeat: "no-repeat",
         backgroundSize: "100% 600px",
-      }}
+      }:null}
     >
-      <Stack flexDirection={"column"} width={"40%"} gap={2} mt={20}>
+      <Stack flexDirection={"column"} width={_700?"40%":"90%"} gap={2} mt={_700?20:0}>
         <Typography
           variant="h5"
-          fontSize={"1.5rem"}
+          fontSize={_700?"1.5rem":"1rem"}
           fontWeight={"bold"}
           alignSelf={"center"}
         >
-          Login with Email
+          {login ? "Login with email" : "Register with email"}
         </Typography>
-        <TextField
-          variant="outlined"
-          placeholder="Enter your username..."
-        ></TextField>
+        {login ? null : (
+          <TextField
+            variant="outlined"
+            placeholder="Enter your username..."
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        )}
         <TextField
           variant="outlined"
           placeholder="Enter your Email..."
-        ></TextField>
+          onChange={(e) => setEmail(e.target.value)}
+        />
         <TextField
           variant="outlined"
           placeholder="Enter your Password..."
-        ></TextField>
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <Button
           size="large"
           sx={{
@@ -49,15 +86,19 @@ const Register = () => {
               cursor: "pointer",
             },
           }}
+          onClick={login ? handleLogin : handleRegister}
         >
-          Sign up
+          {login ? "Login" : "Sign Up"}
         </Button>
         <Typography
           variant="subtitle2"
-          fontSize={"1.3rem"}
+          fontSize={_700?"1.3rem":"1rem"}
           alignSelf={"center"}
         >
-          Already have an account ? <span className="Login-Link">Login</span>
+          {login ? "Don't have an account" : "Already have an account"} ?{" "}
+          <span className="Login-Link" onClick={toggleLogin}>
+            {login ? "Register" : "Login"}
+          </span>
         </Typography>
       </Stack>
     </Stack>
