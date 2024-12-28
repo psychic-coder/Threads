@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import Header from '../../Components/common/Header';
 import AddPost from '../../Components/modals/AddPost';
 import EditProfile from '../../Components/modals/EditProfile';
+import MainMenu from '../../Components/menu/MainMenu';
 
 /*outlet is used to show the children route elements */
 const ProtectedLayout = () => {
@@ -22,6 +23,7 @@ const ProtectedLayout = () => {
         <Header/>
         {/* <AddPost/> */}
         {/* <EditProfile/> */}
+        {/* <MainMenu/> */}
         <Outlet/> 
     </Stack>
   )
